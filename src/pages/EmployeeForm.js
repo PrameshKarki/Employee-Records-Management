@@ -21,7 +21,7 @@ const initialFieldValues = {
     email: "",
     mobile: "",
     city: "",
-    gender: "male",
+    gender: "Male",
     departmentID: "",
     hireDate: new Date(),
     isPermanent: false
@@ -61,7 +61,9 @@ const EmployeeForm = () => {
         e.preventDefault();
 
         if (validator()) {
-            console.log("Valid");
+            Employee.Insert(values);
+            resetForm(); 
+            
         }
 
     }
@@ -134,7 +136,7 @@ const EmployeeForm = () => {
                     onChange={inputChangeHandler}
                 />
                 <div className="buttons-wrapper">
-                    <Button text="Submit" type="submit" />
+                    <Button text="Submit" type="submit"  />
                     <Button text="Reset" onClick={resetForm} color="secondary" />
                 </div>
 
