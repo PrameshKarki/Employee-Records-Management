@@ -21,7 +21,7 @@ const Table = styled(MUITable)(({ theme }) => ({
     }
 }))
 
-export default function useTable(records, headCells) {
+export default function useTable(records, headCells,filter) {
 
     const rowsPerPageOptions = [5, 10, 25];
     const [page, setPage] = useState(0);
@@ -36,7 +36,7 @@ export default function useTable(records, headCells) {
         setPage(0);
     }
     const recordsAfterPagingAndSorting = () => {
-        return records.slice(page * rowsPerPage, (page + 1) * rowsPerPage);
+        return filter.fn(records).slice(page * rowsPerPage, (page + 1) * rowsPerPage);
     }
 
     const TableContainer = props => {
