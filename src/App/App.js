@@ -4,15 +4,35 @@ import react from "react";
 import "./App.css";
 
 // *Import components
-// import {Header} from "../components/index";
-import Header from "../components/Header";
+import components from "../components";
+import Employees from "../pages/Employees";
+
+// *Import Material Components
+import {createTheme, CssBaseline,ThemeProvider} from "@mui/material"
+
+
+
+// *Create Custom Theme
+const theme=createTheme({
+    palette:{
+        background:{
+            default:"#f4f5fd"
+        }
+
+    }
+})
 
 const App = () => {
     // *App Layout goes here
-    return (<>
-        <Header />
+    return (<ThemeProvider theme={theme}>
+        <CssBaseline/>
 
-    </>
+        <components.Header />
+
+        <Employees/>
+
+
+    </ThemeProvider>
     )
 }
 
