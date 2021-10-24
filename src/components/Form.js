@@ -1,5 +1,3 @@
-import react from "react";
-
 import {makeStyles} from "@mui/styles";
 
 const useStyles = makeStyles(theme => ({

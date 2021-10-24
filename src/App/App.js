@@ -1,7 +1,3 @@
-import react from "react";
-
-// *Global styles
-import "./App.css";
 
 // *Import components
 import components from "../components";
@@ -10,13 +6,15 @@ import Employees from "../pages/Employees";
 // *Import Material Components
 import {createTheme, CssBaseline,ThemeProvider} from "@mui/material"
 
-
-
 // *Create Custom Theme
 const theme=createTheme({
     palette:{
         background:{
             default:"#f4f5fd"
+        },
+        secondary:{
+            main:"rgb(255,0,0)",
+            light:"rgb(243, 53, 53)"
         }
 
     }

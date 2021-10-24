@@ -1,5 +1,4 @@
 import { Checkbox as MUICheckbox, FormControl, FormControlLabel } from "@mui/material";
-import react from "react";
 
 const CheckBox = props => {
     const { name, label, value, onChange } = props;

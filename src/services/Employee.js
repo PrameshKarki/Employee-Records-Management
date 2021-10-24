@@ -18,6 +18,18 @@ export const Insert = data => {
     localStorage.setItem(KEYS.employees, JSON.stringify(employees));
 
 }
+export const Update = data => {
+    const employees = Fetch();
+    let recordIndex = employees.findIndex(x => x.id === data.id);
+    employees[recordIndex] = { ...data };
+    localStorage.setItem(KEYS.employees, JSON.stringify(employees));
+}
+
+export const Delete=id=>{
+    let employees=Fetch();
+    employees=employees.filter(x=>x.id!=id);
+    localStorage.setItem(KEYS.employees,JSON.stringify(employees));
+}
 
 export const GenerateEmployeeID = () => {
     if (localStorage.getItem(KEYS.employeeID) == null)
@@ -26,7 +38,6 @@ export const GenerateEmployeeID = () => {
     localStorage.setItem(KEYS.employeeID, (++id).toString());
     return id;
 }
-
 
 export const Fetch = () => {
     if (localStorage.getItem(KEYS.employees) == null)

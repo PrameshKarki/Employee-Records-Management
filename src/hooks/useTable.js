@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const Table = styled(MUITable)(({ theme }) => ({
     marginTop: theme.spacing(3),
+    overflowX:"scroll",
     "& thead th": {
         fontWeight: "600",
         color: "white",
@@ -36,6 +37,7 @@ export default function useTable(records, headCells,filter) {
         setPage(0);
     }
     const recordsAfterPagingAndSorting = () => {
+    
         return filter.fn(records).slice(page * rowsPerPage, (page + 1) * rowsPerPage);
     }
 

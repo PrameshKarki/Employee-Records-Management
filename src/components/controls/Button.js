@@ -12,7 +12,7 @@ const Button = props => {
             sx={
                 {
                     margin: "0 4px",
-                    textTransform: "none"
+                    textTransform: "none",
                 }
             }
             {...other}>

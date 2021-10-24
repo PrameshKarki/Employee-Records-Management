@@ -33,7 +33,8 @@ const genderItems = [
     { id: "others", title: "Others" }
 ]
 
-const EmployeeForm = () => {
+const EmployeeForm = (props) => {
+    const { addOrEdit, recordForEdit } = props;
 
 
     const validator = (fieldValues = values) => {
@@ -61,12 +62,19 @@ const EmployeeForm = () => {
         e.preventDefault();
 
         if (validator()) {
-            Employee.Insert(values);
-            resetForm(); 
-            
+            addOrEdit(values, resetForm);
+
         }
 
     }
+
+    useEffect(() => {
+        if (recordForEdit != null) {
+            setValues({
+                ...recordForEdit
+            })
+        } 
+    }, [recordForEdit])
 
     return <components.Form onSubmit={formSubmitHandler}>
         <Grid container>
@@ -136,7 +144,7 @@ const EmployeeForm = () => {
                     onChange={inputChangeHandler}
                 />
                 <div className="buttons-wrapper">
-                    <Button text="Submit" type="submit"  />
+                    <Button text="Submit" type="submit" />
                     <Button text="Reset" onClick={resetForm} color="secondary" />
                 </div>
 

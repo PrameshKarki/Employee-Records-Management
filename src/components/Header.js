@@ -9,7 +9,7 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import SearchIcon from '@mui/icons-material/Search';
 
-import {makeStyles,createStyles} from "@mui/styles"
+import {makeStyles} from "@mui/styles"
 
 // *For styling 
  const useStyles = makeStyles({ 

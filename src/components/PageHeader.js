@@ -1,4 +1,3 @@
-import react from "react";
 
 // *Import Material Components
 import { Paper, Card, Typography } from "@mui/material";
@@ -19,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     pageIcon: {
         display: "inline-block",
         padding: theme.spacing(2),
-        color: "#3c44b1 !important",
+        color:"#1976d2 !important",
         height:"fit-content"
     },
     pageTitle: {
