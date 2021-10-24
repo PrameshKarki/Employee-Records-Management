@@ -130,7 +130,10 @@ const EmployeeForm = (props) => {
                     onChange={inputChangeHandler}
                     options={Employee.getDepartmentCollection()}
                     error={errors.departmentID} />
-                {/* 
+                {
+                
+                /*
+                // ! Something went wrong in DatePicker.I will fix it as soon as possible 
                 <DatePicker
                 name="hireDate"
                 label="Hire Date"
